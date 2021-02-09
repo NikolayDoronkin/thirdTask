@@ -7,7 +7,7 @@ public class FigureLogic {
 
     private final static Logger LOGGER = Logger.getLogger(FigureLogic.class);
 
-    public final double calculateSquare(final Oval oval) {
+    public final double calculateArea(final Oval oval) {
         LOGGER.info("The method 'calculateSquare' was started.");
         int halfAxisX = Math.abs(calculateAxisX(oval)) / 2;
         int halfAxisY = Math.abs(calculateAxisY(oval)) / 2;

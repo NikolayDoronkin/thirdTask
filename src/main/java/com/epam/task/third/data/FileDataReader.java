@@ -22,6 +22,7 @@ public class FileDataReader {
                 String line = scanner.nextLine();
                 data.add(line);
             }
+            fileReader.close();
             LOGGER.info("Reading from a file was finished successfully.");
             return data;
         } catch (IOException exception) {

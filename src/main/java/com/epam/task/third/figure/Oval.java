@@ -5,7 +5,9 @@ public class Oval {
     private Point firstPosition;
     private Point secondPosition;
 
+
     public Oval(Point firstPosition, Point secondPosition) {
+        super();
         this.firstPosition = firstPosition;
         this.secondPosition = secondPosition;
     }
@@ -14,16 +16,32 @@ public class Oval {
         return firstPosition.getCoordinateX();
     }
 
+    public void setFirstPositionX(int coordinateX) {
+        firstPosition.setCoordinateX(coordinateX);
+    }
+
     public int getFirstPositionY() {
         return firstPosition.getCoordinateY();
+    }
+
+    public void setFirstPositionY(int coordinateY) {
+        firstPosition.setCoordinateY(coordinateY);
     }
 
     public int getSecondPositionX() {
         return secondPosition.getCoordinateX();
     }
 
+    public void setSecondPositionX(int coordinateX) {
+        secondPosition.setCoordinateX(coordinateX);
+    }
+
     public int getSecondPositionY() {
         return secondPosition.getCoordinateY();
+    }
+
+    public void setSecondPositionY(int coordinateY) {
+        secondPosition.setCoordinateY(coordinateY);
     }
 
     @Override
@@ -49,4 +67,5 @@ public class Oval {
         result = 31 * result + secondPosition.hashCode();
         return result;
     }
+
 }

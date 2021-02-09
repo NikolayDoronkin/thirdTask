@@ -3,6 +3,7 @@ package com.epam.task.third.validate;
 import com.epam.task.third.data.FileDataReader;
 import com.epam.task.third.figure.Oval;
 import com.epam.task.third.figure.Point;
+import com.epam.task.third.observable.OvalObserver;
 import org.apache.log4j.Logger;
 
 
@@ -16,12 +17,12 @@ public class DataParser {
         validator = dataValidator;
     }
 
-    public DataValidator getValidator(){
+    public DataValidator getValidator() {
         return validator;
     }
 
     public Oval createOval(String line) throws DataValidatorException {
-        if(!validator.validate(line)){
+        if (!validator.validate(line)) {
         }
         LOGGER.info("Creating an object of the class Oval.");
         String[] coordinates = line.split("\\s+");
@@ -30,7 +31,10 @@ public class DataParser {
         int secondPositionX = Integer.parseInt(coordinates[2]);
         int secondPositionY = Integer.parseInt(coordinates[3]);
         LOGGER.info("Creating of object of the class Oval was finished successfully.");
-        return new Oval(new Point(firstPositionX, firstPositionY), new Point(secondPositionX, secondPositionY));
+        Point firstPoint = new Point(firstPositionX, firstPositionY);
+        Point secondPoint = new Point(secondPositionX, secondPositionY);
+        OvalObserver observer = OvalObserver.getInstance();
+        return new Oval(firstPoint, secondPoint);
 
     }
 }

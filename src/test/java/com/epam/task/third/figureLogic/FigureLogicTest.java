@@ -9,12 +9,12 @@ public class FigureLogicTest {
 
     @Test
 
-    public void testCalculateSquare() {
+    public void testCalculateArea() {
         Oval oval = new Oval(new Point(100, 100), new Point(120, 106));
         FigureLogic figureLogic = new FigureLogic();
 
         double expected = Math.PI * 10 * 3;
-        double actual = figureLogic.calculateSquare(oval);
+        double actual = figureLogic.calculateArea(oval);
         boolean result = expected == actual;
 
         Assert.assertTrue(result);
